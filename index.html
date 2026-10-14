@@ -1,13 +1,167 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Docker Demo</title>
-  <style>body{font-family:system-ui;margin:3rem;background:#eef5ff;color:#18345d}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guide | Explore Your Future</title>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+
+            scroll-behavior: smooth;
+
+        body {
+            line-height: 1.6;
+            color: #263238;
+        header {
+            background: #173b70;
+
 </head>
+
 <body>
-  <h1>Hello from Docker!</h1>
-  <p>This page is served from an Nginx container.</p>
+
+    <header>
+        <nav>
+            <h2>CareerGuide</h2>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Discover Your Dream Career</h1>
+        <p>Explore opportunities, develop your skills, and build your future.</p>
+        <a href="#careers" class="btn">Explore Careers</a>
+    </section>
+
+    <section class="section" id="careers">
+        <h2>Popular Career Options</h2>
+        <p class="subtitle">
+            Explore career paths and discover the skills you need.
+        </p>
+
+        <div class="career-container">
+
+            <div class="career-card">
+                <h3>Software Developer</h3>
+                <p>Develop websites, mobile applications, and software systems.</p>
+                <p><strong>Skills:</strong> Python, Java, JavaScript</p>
+                <p><strong>Education:</strong> Computer Science or related fields</p>
+            </div>
+
+            <div class="career-card">
+                <h3>Data Scientist</h3>
+                <p>Analyze data and build predictive machine learning models.</p>
+                <p><strong>Skills:</strong> Python, SQL, Statistics</p>
+                <p><strong>Education:</strong> Data Science, Statistics, or related fields</p>
+            </div>
+
+            <div class="career-card">
+                <h3>Cybersecurity Analyst</h3>
+                <p>Protect computer systems, networks, and sensitive information.</p>
+                <p><strong>Skills:</strong> Networking, Linux, Security</p>
+                <p><strong>Education:</strong> Computer Science or Cybersecurity</p>
+            </div>
+
+            <div class="career-card">
+                <h3>UI/UX Designer</h3>
+                <p>Create attractive, accessible, and user-friendly interfaces.</p>
+                <p><strong>Skills:</strong> Design, Research, Prototyping</p>
+                <p><strong>Education:</strong> Design, IT, or related fields</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section skills" id="skills">
+        <h2>Essential Career Skills</h2>
+        <p class="subtitle">
+            Build technical and professional skills for career growth.
+        </p>
+
+        <div class="skill-list">
+            <span>Communication</span>
+            <span>Problem Solving</span>
+            <span>Teamwork</span>
+            <span>Technical Skills</span>
+            <span>Time Management</span>
+            <span>Continuous Learning</span>
+        </div>
+    </section>
+
+    <section class="section career-finder">
+        <h2>Find Your Career Direction</h2>
+        <p>Enter your interest to get a career suggestion.</p>
+
+        <input
+            type="text"
+            id="interest"
+            placeholder="e.g. coding, data, security"
+        >
+
+        <button onclick="suggestCareer()">Find Career</button>
+
+        <p id="result" aria-live="polite"></p>
+    </section>
+
+    <footer id="contact">
+        <h3>CareerGuide</h3>
+        <p>Learn today. Build your future tomorrow.</p>
+        <p>&copy; 2026 CareerGuide. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function suggestCareer() {
+            const interest = document
+                .getElementById("interest")
+                .value.trim()
+                .toLowerCase();
+
+            const result = document.getElementById("result");
+
+            if (interest === "") {
+                result.textContent = "Please enter an area of interest.";
+            } else if (
+                interest.includes("coding") ||
+                interest.includes("programming") ||
+                interest.includes("software")
+            ) {
+                result.textContent =
+                    "Suggested career: Software Developer. Start learning Python, Java, or JavaScript.";
+            } else if (
+                interest.includes("data") ||
+                interest.includes("ai") ||
+                interest.includes("machine learning")
+            ) {
+                result.textContent =
+                    "Suggested career: Data Scientist or AI Engineer. Learn Python, SQL, and statistics.";
+            } else if (
+                interest.includes("security") ||
+                interest.includes("network") 
+            ) {
+                result.textContent =
+                    "Suggested career: Cybersecurity Analyst. Learn networking, Linux, and security fundamentals.";
+            } else if (
+                interest.includes("design") ||
+                interest.includes("ui") ||
+                interest.includes("ux")
+            ) {
+                result.textContent =
+                    "Suggested career: UI/UX Designer. Learn design principles and prototyping.";
+            } else {
+                result.textContent =
+                    "Explore different career paths, identify your strengths, and research the skills required.";
+            }
+        }
+    </script>
+
 </body>
 </html>
